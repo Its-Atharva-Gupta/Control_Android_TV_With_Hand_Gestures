@@ -80,7 +80,7 @@ GESTURE_LABELS = {
     "UP":     "▲ UP",
     "DOWN":   "DOWN ▼",
     "CENTER": "👍 OK",
-    "BACK":   "✊ BACK",
+    "BACK":   "👐 BACK",
 }
 
 GESTURE_COLORS = {

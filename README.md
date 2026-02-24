@@ -27,6 +27,7 @@ Built with [MediaPipe](https://ai.google.dev/edge/mediapipe/solutions/vision/han
 | ☝️ Swipe Up | DPAD Up | Point index finger, flick up |
 | ☝️ Swipe Down | DPAD Down | Point index finger, flick down |
 | 👍 Thumbs Up | OK / Select | Raise thumb, curl all other fingers |
+| 🖐️ Open Palm | Back | Extend all five fingers open toward the camera |
 
 ---
 
@@ -76,7 +77,7 @@ over Wi-Fi to your device. Keycode mapping:
 
 **Install dependencies:**
 ```bash
-uv add mediapipe opencv-contrib-python
+uv pip install mediapipe opencv-contrib-python
 ```
 
 The MediaPipe hand landmark model (`hand_landmarker.task`, ~10 MB) downloads automatically on first run.
@@ -135,14 +136,14 @@ The MediaPipe hand landmark model (`hand_landmarker.task`, ~10 MB) downloads aut
 
 ## 🚀 Running
 
-1. Edit line 37 of `main.py`:
+1. Edit line 38 of `gesture_tv_controller.py`:
    ```python
    ADB_HOST = "192.168.x.x:5555"   # your device's IP and port
    ```
 
 2. Run:
    ```bash
-   uv run main.py
+   python gesture_tv_controller.py
    ```
 
 3. A window opens showing your webcam feed. Show your hand and start gesturing.
@@ -175,8 +176,7 @@ A Pi is ideal for a permanent always-on setup — it sits next to the TV, plugs 
 
 **Install:**
 ```bash
-uv init
-uv add mediapipe opencv-contrib-python
+pip install mediapipe opencv-contrib-python
 ```
 
 Connect the Pi to your router via ethernet for a rock-solid connection, set a static IP on your TV, and the setup never needs touching again.
@@ -187,8 +187,8 @@ Connect the Pi to your router via ethernet for a rock-solid connection, set a st
 
 ```
 .
-├── main.py   # Main script
-├── hand_landmarker.task # MediaPipe model (auto-downloaded)
+├── gesture_tv_controller.py   # Main script
+├── hand_landmarker.task       # MediaPipe model (auto-downloaded)
 └── README.md
 ```
 
