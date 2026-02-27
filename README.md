@@ -1,4 +1,4 @@
-# 🖐️ Gesture TV Controller
+#  Gesture TV Controller
 
 Control your Android TV, Google TV, or any Android device hands-free using your webcam and hand gestures. No remote needed.
 
@@ -6,7 +6,7 @@ Built with [MediaPipe](https://ai.google.dev/edge/mediapipe/solutions/vision/han
 
 ---
 
-## ✨ Features
+##  Features
 
 - **Real-time hand tracking** via webcam using Google's MediaPipe Hand Landmarker
 - **4 swipe directions** — left, right, up, down — mapped to DPAD navigation
@@ -22,16 +22,16 @@ Built with [MediaPipe](https://ai.google.dev/edge/mediapipe/solutions/vision/han
 
 | Gesture | Action | How to do it |
 |---|---|---|
-| ☝️ Swipe Left | DPAD Left | Point index finger, flick left |
-| ☝️ Swipe Right | DPAD Right | Point index finger, flick right |
-| ☝️ Swipe Up | DPAD Up | Point index finger, flick up |
-| ☝️ Swipe Down | DPAD Down | Point index finger, flick down |
-| 👍 Thumbs Up | OK / Select | Raise thumb, curl all other fingers |
-| 🖐️ Open Palm | Back | Extend all five fingers open toward the camera |
+| Swipe Left | DPAD Left | Point index finger, flick left |
+| Swipe Right | DPAD Right | Point index finger, flick right |
+| Swipe Up | DPAD Up | Point index finger, flick up |
+| Swipe Down | DPAD Down | Point index finger, flick down |
+| Thumbs Up | OK / Select | Raise thumb, curl all other fingers |
+| Open Palm | Back | Extend all five fingers open toward the camera |
 
 ---
 
-## 🛠️ How It Works
+## How It Works
 
 ### Hand Tracking
 The script uses MediaPipe's `HandLandmarker` task to detect 21 landmarks on your hand every frame. All processing runs locally on your machine — no cloud, no internet required after the model downloads.
@@ -73,7 +73,7 @@ over Wi-Fi to your device. Keycode mapping:
 
 ---
 
-## 📦 Installation
+## Installation
 
 **Install dependencies:**
 ```bash
@@ -84,7 +84,7 @@ The MediaPipe hand landmark model (`hand_landmarker.task`, ~10 MB) downloads aut
 
 ---
 
-## 📱 Device Setup
+## Device Setup
 
 ### Android TV / Google TV
 
@@ -134,7 +134,7 @@ The MediaPipe hand landmark model (`hand_landmarker.task`, ~10 MB) downloads aut
 
 ---
 
-## 🚀 Running
+## Running
 
 1. Edit line 38 of `gesture_tv_controller.py`:
    ```python
@@ -152,7 +152,7 @@ Press **Q** to quit.
 
 ---
 
-## ⚙️ Tuning
+## Tuning
 
 All detection parameters are at the top of the script and easy to adjust:
 
@@ -166,34 +166,3 @@ All detection parameters are at the top of the script and easy to adjust:
 | `THUMB_RISE_MIN` | `0.08` | How high the thumb must be raised for thumbs-up |
 | `THUMBS_UP_COOLDOWN_S` | `1.0` | Seconds before thumbs-up can fire again |
 
----
-
-## 🖥️ Running on a Raspberry Pi (Permanent Setup)
-
-A Pi is ideal for a permanent always-on setup — it sits next to the TV, plugs into the TV's USB port for power, and runs the script on boot.
-
-**Requirements:** Raspberry Pi 4 or 5 (Pi 3 is too slow), any USB webcam.
-
-**Install:**
-```bash
-pip install mediapipe opencv-contrib-python
-```
-
-Connect the Pi to your router via ethernet for a rock-solid connection, set a static IP on your TV, and the setup never needs touching again.
-
----
-
-## 📁 Project Structure
-
-```
-.
-├── gesture_tv_controller.py   # Main script
-├── hand_landmarker.task       # MediaPipe model (auto-downloaded)
-└── README.md
-```
-
----
-
-## 📄 License
-
-MIT — do whatever you like with it.
